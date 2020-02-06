@@ -14,10 +14,10 @@ class App{
       type: "GET",
       url: "http://sgt.lfzprototypes.com/api/grades",
       headers: {
-        "X-Access-Token": "loWVzshS"
-      }
-      sucess: handleGetGradesSuccess();
-      error: handleGetGradesError();
+        "X-Access-Token":"loWVzshS"
+      },
+      success: this.handleGetGradesSuccess,
+      error: this.handleGetGradesError
     })
   }
   start() {
