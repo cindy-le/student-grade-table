@@ -1,4 +1,4 @@
-class GradeTable {
+class gradeTable {
   constructor(tableElement) {
     this.tableElement = tableElement;
   }
