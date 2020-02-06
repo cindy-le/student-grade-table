@@ -1,3 +1,6 @@
-var test = new App()
+var tableElement = document.querySelector("tbody")
 
-test.start();
+var newGradeTable = new GradeTable(tableElement)
+var newApp = new App(newGradeTable);
+
+newApp.start();

@@ -1,6 +1,6 @@
 class App{
   constructor(gradeTable){
-    this.a = gradeTable,
+    this.gradeTable = gradeTable,
     this.handleGetGradesError = this.handleGetGradesError.bind(this)
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
   }
@@ -9,7 +9,6 @@ class App{
   }
   handleGetGradesSuccess(grades) {
     this.gradeTable.updateGrades(grades);
-    // console.log(grades)
   }
   getGrades() {
     $.ajax({
