@@ -33,9 +33,6 @@ class App {
       error: this.handleGetGradesError
     })
   }
-  start() {
-    this.getGrades();
-  }
   createGrade(name, course, grade) {
     console.log(name);
     console.log(course);
@@ -46,5 +43,9 @@ class App {
   }
   handleCreateGradeSuccess() {
     this.getGrades();
+  }
+  start() {
+    this.getGrades();
+    this.gradeForm.onSubmit(this.createGrade);
   }
 }
