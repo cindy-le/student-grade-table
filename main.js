@@ -1,3 +1,6 @@
+var formElement = document.querySelector("form")
+var newGradeForm = new GradeForm(formElement)
+
 var headerElement = document.querySelector("header")
 var pageHeader = new PageHeader(headerElement)
 
