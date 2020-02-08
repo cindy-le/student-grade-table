@@ -3,6 +3,8 @@ class GradeTable {
     this.tableElement = tableElement;
   }
   updateGrades(grades) {
+    var tbody = document.querySelector("tbody");
+    tbody.textContent = "";
     for (var i = 0; i < grades.length; i++) {
       var row = document.createElement("tr");
       var name = document.createElement("td");
@@ -12,7 +14,7 @@ class GradeTable {
       var grade = document.createElement("td");
       grade.textContent = grades[i].grade;
       row.append(name, course, grade);
-      document.querySelector("tbody").appendChild(row)
+      tbody.appendChild(row)
     }
   }
 }
