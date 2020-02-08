@@ -1,9 +1,12 @@
+var formElement = document.querySelector("form")
+var gradeForm = new GradeForm(formElement)
+
 var headerElement = document.querySelector("header")
 var pageHeader = new PageHeader(headerElement)
 
 var tableElement = document.querySelector("tbody")
 var newGradeTable = new GradeTable(tableElement)
 
-var newApp = new App(newGradeTable, pageHeader);
+var newApp = new App(newGradeTable, pageHeader, gradeForm);
 
 newApp.start();
