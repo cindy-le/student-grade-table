@@ -2,12 +2,15 @@ class App {
   constructor(gradeTable, pageHeader, gradeForm) {
     this.gradeTable = gradeTable;
     this.pageHeader = pageHeader;
+
     this.gradeForm = gradeForm;
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this);
+
     this.createGrade = this.createGrade.bind(this);
     this.handleCreateGradeError = this.handleCreateGradeError.bind(this);
     this.handleCreateGradeSuccess = this.handleCreateGradeSuccess.bind(this);
+
     this.deleteGrade = this.deleteGrade.bind(this);
     this.handleDeleteGradeError = this.handleDeleteGradeError.bind(this);
     this.handleDeleteGradeSuccess = this.handleDeleteGradeSuccess.bind(this);
@@ -51,19 +54,12 @@ class App {
       success: this.handleCreateGradeSuccess,
       error: this.handleCreateGradeError,
     })
-    console.log(name);
-    console.log(course);
-    console.log(grade);
   }
   handleCreateGradeError(error) {
     console.error(error);
   }
   handleCreateGradeSuccess() {
     this.getGrades();
-  }
-  start() {
-    this.getGrades();
-    this.gradeForm.onSubmit(this.createGrade);
   }
   deleteGrade(id){
     console.log(id)
@@ -73,5 +69,10 @@ class App {
   }
   handleDeleteGradeSuccess() {
     this.getGrades();
+  }
+  start() {
+    this.getGrades();
+    this.gradeForm.onSubmit(this.createGrade);
+    this.gradeTable.onDeleteClick(this.deleteGrade);
   }
 }
