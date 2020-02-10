@@ -1,6 +1,7 @@
 class GradeTable {
-  constructor(tableElement) {
+  constructor(tableElement, noGradesElement) {
     this.tableElement = tableElement;
+    this.noGradesElement = noGradesElement;
   }
   updateGrades(grades) {
     var tbody = document.querySelector("tbody");
@@ -41,18 +42,5 @@ class GradeTable {
     row.append(name, course, grade, buttonTd);
     tbodyEl.appendChild(row);
     return row;
-
-
-    // var tbody = document.querySelector("tbody")
-    // var tableRow = document.createElement("tr");
-    // var tableData = document.createElement("td");
-    // var button = document.createElement("button");
-    // button.textContent = "DELETE";
-    // button.setAttribute(class, "btn btn-danger");
-    // tableData.textContent = button;
-    // tableRow.appendChild(tableData);
-    // tbody.append(tableRow);
-    // button.addEventListener("click", deleteGrade(data.id));
-    // return tableRow;
   }
 }
